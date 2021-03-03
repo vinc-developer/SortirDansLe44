@@ -31,9 +31,19 @@ class EtatController extends AbstractController
         ]);
 
         $etat = $etatRepository->findAll();
-        $jsonEtat = $serializer->serialize($etat, 'json');
 
-        return new JsonResponse($jsonEtat, Response::HTTP_OK,
-        ['Access-Control-Allow-Origin' => 'http://localhost'], true); //CROSS ORIGIN
+        if (!$etat) {
+            $result = [
+                "message" => "Requested Etat not found"
+            ];
+            $jsonResult = $serializer->serialize($result, 'json');
+            return new JsonResponse($jsonResult, Response::HTTP_BAD_REQUEST,
+                ['Access-Control-Allow-Origin' => 'http://localhost'], true);
+        } else {
+            $jsonEtat = $serializer->serialize($etat, 'json');
+
+            return new JsonResponse($jsonEtat, Response::HTTP_OK,
+                ['Access-Control-Allow-Origin' => 'http://localhost'], true); //CROSS ORIGIN
+        }
     }
 }

@@ -30,8 +30,18 @@ class VilleController extends AbstractController
         ]);
 
         $ville = $villeRepository->findAll();
-        $jsonVille = $serializer->serialize($ville, 'json');
-        return new JsonResponse($jsonVille, Response::HTTP_OK,
-        ['Access-Control-Allow-Origin' => 'http://localhost'], true); //CROSS ORIGIN
+
+        if (!$ville) {
+            $result = [
+                "message" => "Requested Ville not found"
+            ];
+            $jsonResult = $serializer->serialize($result, 'json');
+            return new JsonResponse($jsonResult, Response::HTTP_BAD_REQUEST,
+                ['Access-Control-Allow-Origin' => 'http://localhost'], true);
+        } else {
+            $jsonVille = $serializer->serialize($ville, 'json');
+            return new JsonResponse($jsonVille, Response::HTTP_OK,
+                ['Access-Control-Allow-Origin' => 'http://localhost'], true); //CROSS ORIGIN
+        }
     }
 }

@@ -1,7 +1,138 @@
+:root {
+    --header-bg-color: #bc57d0;
+    --header-logo-color: #dd9774;
+    --header-txt-color: #fff;
+    --header-logo-size: 2.5em;
+
+    --nav-link-color: #dedcdc;
+    --nav-link-hover: #be6565;
+    --nav-link-active: #dedcdc;
+    --nav-link-visited: #dedcdc;
+    --nav-link-size: 1.2em;
+
+    --body-bg-color: #e6c455;
+    --body-txt-color: #701a35;
+    --body-link-color: #1a3b70;
+    --body-link-hover: #5885cf;
+    --body-link-active: #1a3b70;
+    --body-link-visited: #1a3b70;
+    --body-link-size: 1.2em;
+
+    --footer-bg-color: #41870f;
+    --footer-txt-color: #0f5b87;
+
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-h1{
-    font-weight: bold;
+
+html {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
 }
+
+body {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+}
+
+a {
+    color: var(--body-link-color);
+}
+a:hover {
+     color: var(--body-link-hover);
+ }
+
+a:active {
+     color: var(--body-link-active);
+ }
+
+a:visited {
+     color: var(--body-link-visited);
+ }
+
+.container {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--body-bg-color);
+    color: var(--body-txt-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-width: 100%;
+    height: 80px;
+    background: var(--header-bg-color);
+    color: var(--header-txt-color);
+    padding: 20px;
+}
+
+h1 {
+    color: var(--header-logo-color);
+    font-size: var(--header-logo-size);
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    align-items: flex-end;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--nav-link-color);
+    text-decoration: none;
+    font-size: var(--nav-link-size);
+}
+
+nav ul li a:hover {
+     color: var(--nav-link-hover);
+ }
+
+nav ul li a:active {
+     color: var(--nav-link-active);
+ }
+
+nav ul li a:visited {
+     color: var(--nav-link-visited);
+ }
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background-color: var(--footer-bg-color);
+    color: var(--footer-txt-color);
+}
+
+footer p{
+    text-align: center;
+}
+
+

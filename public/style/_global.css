@@ -1,25 +1,31 @@
 :root {
-    --header-bg-color: #bc57d0;
-    --header-logo-color: #dd9774;
-    --header-txt-color: #fff;
+    --header-bg-color: #2e4078;
+    --header-logo-color: #ddf3f3;
+    --header-txt-color: #ddf3f3;
     --header-logo-size: 2.5em;
 
-    --nav-link-color: #dedcdc;
-    --nav-link-hover: #be6565;
+    --nav-link-color: #ddf3f3;
+    --nav-link-hover: #a9f0f0;
     --nav-link-active: #dedcdc;
     --nav-link-visited: #dedcdc;
     --nav-link-size: 1.2em;
 
-    --body-bg-color: #e6c455;
-    --body-txt-color: #701a35;
+    --body-bg-color: #baede9;
+    --body-txt-color: #0e0e0e;
     --body-link-color: #1a3b70;
     --body-link-hover: #5885cf;
     --body-link-active: #1a3b70;
     --body-link-visited: #1a3b70;
     --body-link-size: 1.2em;
 
-    --footer-bg-color: #41870f;
-    --footer-txt-color: #0f5b87;
+    --flash-txt-color: #dfdfdf;
+    --flash-bg-success: #7ac024;
+    --flash-bg-error: #8d1229;
+
+    --footer-bg-color: #78cad2;
+    --footer-txt-color: #053b5c;
+
+    --form-border-color: #62a8ac;
 
 }
 
@@ -118,6 +124,26 @@ nav ul li a:active {
 nav ul li a:visited {
      color: var(--nav-link-visited);
  }
+
+.flash {
+    width: 400px;
+    margin-bottom: 50px;
+    padding: 20px;
+    font-weight: bold;
+    color: var(--flash-txt-color);
+}
+
+.flash-success {
+    background: var(--flash-bg-success);
+}
+
+.flash-error {
+    background: var(--flash-bg-error);
+}
+
+h2 {
+    margin-bottom: 15px;
+}
 
 footer {
     display: flex;

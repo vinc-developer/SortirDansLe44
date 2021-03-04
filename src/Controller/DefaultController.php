@@ -27,14 +27,7 @@ class DefaultController extends AbstractController
             'client_ip' => $clientIP,
         ]);
 
-        $code = Response::HTTP_FORBIDDEN;
-        $result = [
-            "message" => "Operation not allowed"
-        ];
-
-        $jsonResult = $serializer->serialize($result, 'json');
-        return new JsonResponse($jsonResult, $code,
-            ['Access-Control-Allow-Origin' => 'http://localhost'], true);  //CROSS ORIGIN
+        return $this->render('default/index.html.twig');
     }
 
     /**
